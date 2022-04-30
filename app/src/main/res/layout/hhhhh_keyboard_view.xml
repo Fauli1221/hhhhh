@@ -24,7 +24,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:hapticFeedbackEnabled="true"
-            android:text="@string/a"
+            android:text="@string/h"
             android:textAppearance="@style/AButtonText"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/btnSpace"
