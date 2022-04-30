@@ -18,14 +18,14 @@
     tools:layout_gravity="bottom">
 
         <Button
-            android:id="@+id/btnA"
+            android:id="@+id/btnH"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:hapticFeedbackEnabled="true"
             android:text="@string/h"
-            android:textAppearance="@style/AButtonText"
+            android:textAppearance="@style/HButtonText"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/btnSpace"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,11 +39,11 @@
             android:contentDescription="@string/backspace"
             android:hapticFeedbackEnabled="true"
             android:src="@drawable/ic_backspace"
-            android:tint="?attr/colorControlNormal"
             app:srcCompat="@drawable/ic_backspace"
             tools:srcCompat="@drawable/ic_backspace"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="?attr/colorControlNormal" />
 
         <ImageButton
             android:id="@+id/btnUppercase"
@@ -53,11 +53,11 @@
             android:contentDescription="@string/uppercase"
             android:hapticFeedbackEnabled="true"
             android:src="@drawable/ic_keyboard_caps"
-            android:tint="?attr/colorControlNormal"
             app:srcCompat="@drawable/ic_keyboard_caps"
             tools:srcCompat="@drawable/ic_keyboard_caps"
             app:layout_constraintBottom_toTopOf="@id/btnBackspace"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="?attr/colorControlNormal" />
 
         <Button
             android:id="@+id/btnSpace"
@@ -79,10 +79,10 @@
             android:contentDescription="@string/enter"
             android:hapticFeedbackEnabled="true"
             android:src="@drawable/ic_return"
-            android:tint="?attr/colorControlNormal"
             app:srcCompat="@drawable/ic_return"
             tools:srcCompat="@drawable/ic_return"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="?attr/colorControlNormal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

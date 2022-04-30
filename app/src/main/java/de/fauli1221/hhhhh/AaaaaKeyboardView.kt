@@ -27,9 +27,9 @@ class AaaaaKeyboardView(
     View.OnTouchListener {
     interface AaaaaKeyboardListener {
         var isUppercase: Boolean
-        fun onA()
-        fun onLongA()
-        fun onReleaseA()
+        fun onH()
+        fun onLongH()
+        fun onReleaseH()
         fun onBackspace()
         fun onSpace()
         fun onReturn()
@@ -37,7 +37,7 @@ class AaaaaKeyboardView(
         fun onReleaseBackspace()
     }
 
-    private val btnA: Button
+    private val btnH: Button
     private val btnBackspace: ImageButton
     private val btnSpace: Button
     private val btnReturn: ImageButton
@@ -75,15 +75,15 @@ class AaaaaKeyboardView(
             /*attachToRoot=*/true,
         )
 
-        this.btnA = findViewById<Button>(R.id.btnA)
+        this.btnH = findViewById<Button>(R.id.btnH)
         this.btnBackspace = findViewById<ImageButton>(R.id.btnBackspace)
         this.btnSpace = findViewById<Button>(R.id.btnSpace)
         this.btnReturn = findViewById<ImageButton>(R.id.btnReturn)
         this.btnUppercase = findViewById<ImageButton>(R.id.btnUppercase)
 
-        this.btnA.setOnLongClickListener(this)
-        this.btnA.setOnTouchListener(this)
-        this.btnA.setOnClickListener(this)
+        this.btnH.setOnLongClickListener(this)
+        this.btnH.setOnTouchListener(this)
+        this.btnH.setOnClickListener(this)
         this.btnBackspace.setOnClickListener(this)
         this.btnBackspace.setOnTouchListener(this)
         this.btnBackspace.setOnLongClickListener(this)
@@ -117,7 +117,7 @@ class AaaaaKeyboardView(
             v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
 
         when (id) {
-            R.id.btnA -> keyboardListener.onA()
+            R.id.btnH -> keyboardListener.onH()
             R.id.btnBackspace -> keyboardListener.onBackspace()
             R.id.btnSpace -> keyboardListener.onSpace()
             R.id.btnReturn -> keyboardListener.onReturn()
@@ -131,8 +131,8 @@ class AaaaaKeyboardView(
     override fun onLongClick(v: View): Boolean {
         val id = v.getId()
         return when (id) {
-            R.id.btnA -> {
-                this.keyboardListener.onLongA()
+            R.id.btnH -> {
+                this.keyboardListener.onLongH()
                 true
             }
             R.id.btnBackspace -> {
@@ -148,8 +148,8 @@ class AaaaaKeyboardView(
         val action = event?.action
 
         when (id) {
-            R.id.btnA -> {
-                if (action == MotionEvent.ACTION_UP) keyboardListener.onReleaseA()
+            R.id.btnH -> {
+                if (action == MotionEvent.ACTION_UP) keyboardListener.onReleaseH()
             }
             R.id.btnBackspace -> {
                 if (action == MotionEvent.ACTION_UP) keyboardListener.onReleaseBackspace()
@@ -160,13 +160,13 @@ class AaaaaKeyboardView(
     }
 
     private fun onUppercase() {
-        btnA.text = "A"
+        btnH.text = "H"
         val colorPrimary = ContextCompat.getColor(context, R.color.colorPrimary)
         btnUppercase.drawable.setTint(colorPrimary)
     }
 
     private fun onLowercase() {
-        btnA.text = "a"
+        btnH.text = "h"
         val colorControlNormal = themeWrapper
                 .theme
                 .obtainStyledAttributes(intArrayOf(android.R.attr.colorControlNormal))

@@ -65,16 +65,16 @@ class AaaaaInputMethodService : InputMethodService(), AaaaaKeyboardView.AaaaaKey
         ic.commitText(ch.toString(), 1)
     }
 
-    override fun onA() {
+    override fun onH() {
         inputChar(if (isUppercase) 'H' else 'h')
     }
 
-    override fun onLongA() {
+    override fun onLongH() {
         aRepeatThread?.interrupt()
-        aRepeatThread = repeatThread { onA() }
+        aRepeatThread = repeatThread { onH() }
     }
 
-    override fun onReleaseA() {
+    override fun onReleaseH() {
         aRepeatThread?.interrupt()
     }
 
